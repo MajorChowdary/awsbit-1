@@ -1,6 +1,9 @@
 aws cloudwatch help
 aws cloudwatch get-metric-statistics --generate-cli-skeleton
 --------------------------------------------------disk size-------------------------------------------
+# for debug 
+Import-Module C:\ProgramData\Amazon\EC2-Windows\Launch\Module\Ec2Launch.psm1; Add-Routes
+
 $disk = Get-WmiObject Win32_LogicalDisk -ComputerName 'localhost' -Filter "DeviceID='c:'" |
 Select-Object Size,FreeSpace
 $disk.Size
